@@ -15,7 +15,7 @@ ActiveStorage.start()
 
 
 $(function() {
-  $(".icon").on("click", function() {
+  $(".nav__icon").on("click", function() {
     if ($("#nav__content").hasClass("responsive")) {
       $("#nav__content").removeClass("responsive");
     } else {
