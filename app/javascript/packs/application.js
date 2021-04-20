@@ -8,14 +8,15 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "@fortawesome/fontawesome-free/css/all"
+require("./admin")
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
 
-$(function() {
-  $(".icon").on("click", function() {
+$(document).on("turbolinks:load", function() {
+  $(".nav__icon").on("click", function() {
     if ($("#nav__content").hasClass("responsive")) {
       $("#nav__content").removeClass("responsive");
     } else {
