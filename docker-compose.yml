@@ -1,10 +1,18 @@
-version: '3'
+version: '3.9'
 
 services:
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch
+  #   volumes:
+  #     - es-data:/usr/share/elasticsearch/data
+  #   environment:
+  #     - discovery.type=single-node
+
   db:
     image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+      # - dbdata:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
@@ -37,3 +45,7 @@ services:
       - .:/blogs
     ports:
       - '3035:3035'
+
+# volumes:
+  # dbdata:
+  # es-data:
